@@ -1,0 +1,24 @@
+# config/cucumber.yml
+##YAML Template
+---
+default: --profile web_android
+
+common_options: -r features/support -r features/step_definitions -r features/screens -r features/helpers/Utils -f pretty -f junit SCREENSHOT_PATH=output/screenshots --tags ~@InProcess
+
+android_common_options: --profile common_options PLATFORM=android -r features/helpers/android/support --format json -o output/test-reports/android/android.json  -f html -o output/test-reports/android/android.html --tags ~@PendingAndroid
+
+ios_common_options: --profile common_options PLATFORM=ios -r features/helpers/ios/support --format json -o output/test-reports/ios/ios.json -f html -o output/test-reports/ios/ios.html --tags ~@PendingIos
+
+android_device: NO_LAUNCH=1 RESET_BETWEEN_SCENARIOS=0 --profile android_common_options
+
+android: ADB_DEVICE_ARG=emulator-5554 RESET_BETWEEN_SCENARIOS=1 --profile android_common_options
+
+android_genymotion: ADB_DEVICE_ARG=192.168.56.101:5555 RESET_BETWEEN_SCENARIOS=1 --profile android_common_options
+
+ios: NO_LAUNCH=0 DEVICE_TARGET='iPhone 6 (8.1 Simulator)' DEVICE=iphonesimulator RESET_BETWEEN_SCENARIOS=1 --profile ios_common_options --tags ~@ios6
+
+ios6: DEVICE_TARGET='iPhone Retina (4-inch) - Simulator - iOS 6.1' DEVICE=iphonesimulator RESET_BETWEEN_SCENARIOS=1 --profile ios_common_options
+
+ios_device: NO_LAUNCH=1 RESET_BETWEEN_SCENARIOS=0 PLATFORM=ios --profile ios_common_options --tags ~@PendingIOSDevice
+
+ios8: DEVICE_TARGET='iPhone 6 (8.1 Simulator)' DEVICE=iphonesimulator RESET_BETWEEN_SCENARIOS=1 --profile ios_common_options

@@ -1,0 +1,103 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "Running a test",
+    "line": 1,
+    "description": "As an iOS developer\nI want to login in my application\nSo I can start watching my hero list",
+    "id": "running-a-test",
+    "uri": "features/1_login.feature",
+    "elements": [
+      {
+        "keyword": "Scenario Outline",
+        "name": "Example steps Happy Path",
+        "line": 7,
+        "description": "",
+        "tags": [
+          {
+            "name": "@LoginApp",
+            "line": 6
+          }
+        ],
+        "id": "running-a-test;example-steps-happy-path",
+        "type": "scenario_outline",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "I am on the Login Screen",
+            "line": 8,
+            "match": {
+              "location": "features/step_definitions/login_step.rb:6"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I fill user \"<user>\" and password \"<password>\" fields",
+            "line": 9,
+            "match": {
+              "location": "features/1_login.feature:9"
+            }
+          },
+          {
+            "keyword": "And ",
+            "name": "take picture",
+            "line": 10,
+            "match": {
+              "location": "features/1_login.feature:10"
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "I tap over Login button",
+            "line": 11,
+            "match": {
+              "location": "features/step_definitions/login_step.rb:17"
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "I see Heroes List screen with \"<title>\"",
+            "line": 12,
+            "match": {
+              "arguments": [
+                {
+                  "offset": 31,
+                  "val": "Heroes List"
+                }
+              ],
+              "location": "features/step_definitions/login_step.rb:20"
+            }
+          }
+        ],
+        "examples": [
+          {
+            "keyword": "Examples",
+            "name": "",
+            "line": 15,
+            "description": "",
+            "id": "running-a-test;example-steps-happy-path;",
+            "rows": [
+              {
+                "cells": [
+                  "user",
+                  "password",
+                  "title"
+                ],
+                "line": 16,
+                "id": "running-a-test;example-steps-happy-path;;1"
+              },
+              {
+                "cells": [
+                  "bdd",
+                  "1234",
+                  "Heroes List"
+                ],
+                "line": 17,
+                "id": "running-a-test;example-steps-happy-path;;2"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

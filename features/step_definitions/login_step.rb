@@ -8,10 +8,7 @@ Given /^I am on the Login Screen$/ do
    @login_screen.wait_for_screen
 end
 
-Then /^I fill user "(.*?)" and password "(.*?)"" fields$/ do |username, password|
-end
-
-And /^take picture$/ do
+Then /^I fill user "(.*?)" and password "(.*?)" fields$/ do |username, password|
 end
 
 When /^I tap over Login button$/ do

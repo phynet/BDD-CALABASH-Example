@@ -1,0 +1,13 @@
+source 'http://rubygems.org'
+
+gem 'calabash-android', '0.4.20'
+gem 'calabash-cucumber', '0.12.2'
+gem 'gherkin'
+gem 'rspec'
+gem 'websocket'
+gem 'run_loop'
+gem 'test-unit'
+gem 'byebug'
+gem 'headless'
+gem 'rake'
+gem 'rspec-expectations'

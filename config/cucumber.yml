@@ -1,7 +1,7 @@
 # config/cucumber.yml
 ##YAML Template
 ---
-default: --profile web_android
+default: --profile ios
 
 common_options: -r features/support -r features/step_definitions -r features/screens -r features/helpers/Utils -f pretty -f junit SCREENSHOT_PATH=output/screenshots --tags ~@InProcess
 

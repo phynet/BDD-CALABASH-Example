@@ -83,10 +83,10 @@ module IosHelper
 
   # Tap on elements
 
-  def tap(selector, time=30, force_view=false)
+  def tap_in(selector, time=30, force_view=false)
     wait(selector, time, force_view)
     trace_sleep(1)
-	touch("#{selector[PLATFORM]}")
+	  touch("#{selector[PLATFORM]}")
   end
 
   def tap_in_cell_row(selector, position, time=50)
@@ -99,7 +99,7 @@ module IosHelper
   def tap_in_ui_component_marked(selector,value, time=50)
     wait_label_marked(selector,value)
     trace_sleep(1)
-	touch("#{selector[PLATFORM]} label marked:'#{value}'")
+	  touch("#{selector[PLATFORM]} label marked:'#{value}'")
   end
 
   def tap_component_index(selector, index)
@@ -112,7 +112,7 @@ module IosHelper
   def fill(selector, value, force_type=false)
     if force_type
       query("#{selector[PLATFORM]}", :setText=>'')
-      tap(selector)
+      tap_in(selector)
       p "Tapped. Ready to fill text..."
       keyboard_enter_text(value)
       element_exists("UIButton label marked:'OK'") ? touch("UIButton label marked:'OK'") : tap_keyboard_action_key
@@ -176,16 +176,16 @@ module IosHelper
   def switch_status(selector, status)
     wait(selector)
     if status #on true
-      tap(selector) unless switch_is_checked_on(selector)
+      tap_in(selector) unless switch_is_checked_on(selector)
     else
-      tap(selector) if switch_is_checked_on(selector)
+      tap_in(selector) if switch_is_checked_on(selector)
     end
   end
 
   # Date pickers
 
   def picker_date(selector, day, month, year)
-    tap(selector)
+    tap_in(selector)
     picker_set_date_time(DateTime.new(year, month, day), notify_targets: true)
     touch("UIButton label marked:'OK'") if element_exists("UIButton label marked:'OK'")
   end

@@ -1,6 +1,6 @@
 class MediaMobile
+  
   def initialize
-
     if ENV['PLATFORM'].include? 'ios' || ENV['PLATFORM'].nil?
       lib = "Ios"
       require_relative 'ios/ios_helper'

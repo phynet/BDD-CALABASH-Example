@@ -17,12 +17,21 @@ class LoginScreen < CommonScreen
 
 
   SCREEN_HEADER = {
-	android: "android.widget.TextView id:'loginTitle'",
+	  android: "android.widget.TextView id:'loginTitle'",
   	ios: "UIView id:'viewLogin'"
   }
 
 def initialize 
 	super SCREEN_HEADER
+end
+
+def fill_input(input,type)
+  fill(USERNAME,input) if type.eql? :username
+  fill(PASSWORD,input) if type.eql? :password
+end
+
+def sign_in
+  tap_in(LOGIN_BUTTON)
 end
 
 

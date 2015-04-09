@@ -4,6 +4,7 @@ Feature: Running a test
   So I can start watching my hero list
 
 @LoginApp
+@HappyPath
 Scenario Outline: Example steps Happy Path
   Given I am on the Login Screen
   Then I fill user "<user>" and password "<password>" fields

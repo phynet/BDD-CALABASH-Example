@@ -2,6 +2,5 @@
 .idea
 .irb-history
 Gemfile.lock
-binary
 test_servers
 lib

@@ -85,7 +85,7 @@ module AndroidHelper
 
   # Tap on elements
 
-	def tap(selector, time=20, force_view=false)
+	def tap_in(selector, time=20, force_view=false)
     wait(selector, time, force_view)
     touch("#{selector[PLATFORM]}")
 	end
@@ -178,9 +178,9 @@ module AndroidHelper
 
   def switch_status(selector, status)
     if status #on 
-      tap(selector)  unless switch_is_checked_on(selector)
+      tap_in(selector)  unless switch_is_checked_on(selector)
     else #off
-      tap(selector)  if switch_is_checked_on(selector)
+      tap_in(selector)  if switch_is_checked_on(selector)
     end
   end
 
@@ -188,11 +188,6 @@ module AndroidHelper
 
   def picker_date(selector, day, month, year)
     date =  DateTime.now
-    p date.month
-    p date.year
-    p day
-    p selector
-    p "wait"
     wait(selector)
 
     if(month > date.month || year > date.year)
@@ -201,7 +196,7 @@ module AndroidHelper
     else
        touch("#{selector[PLATFORM]} text:'#{day}'")
     end
-    touch("android.widget.Button id:'closeButton'")
+      touch("android.widget.Button id:'closeButton'")
   end
 
   def picker_table(selector, index)

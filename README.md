@@ -1,7 +1,5 @@
 # BDD-CALABASH-Example
-BDD EXAMPLE USING CALABASH-IOS &amp; CALABASH-ANDROID
-
-Testing with calabash-androd and calabash-ios using Gherkin - cucumber
+BDD EXAMPLE: USING CALABASH-IOS &amp; CALABASH-ANDROID
 
 You will need to add a folder called **binary** in root. Inside you will have to add two more folders: **android** and **ios**. Inside you will add both binary projects. Links of these are below.
 

@@ -12,7 +12,12 @@ module AndroidHelper
 
   def hide_keyboard
     p "HIDE KEYBOARD"
-    android_calabash_version.eql? constants['CALABASH_VERSION'] ? performAction('go_back') : press_back_button
+    press_back_button
+  end
+
+  def open_app
+    p "Opening app..."
+    start_test_server_in_background
   end
 
   # Check elements exist
@@ -87,7 +92,9 @@ module AndroidHelper
 
 	def tap_in(selector, time=20, force_view=false)
     wait(selector, time, force_view)
-    touch("#{selector[PLATFORM]}")
+    p 'tap'
+    p selector[PLATFORM]
+    p touch("#{selector[PLATFORM]}")
 	end
 
 	def tap_in_cell_row(selector, position, time=20)
@@ -109,9 +116,7 @@ module AndroidHelper
 
   def fill(selector, value, force_type=false)
     wait(selector)
-    touch("#{selector[PLATFORM]}")
-    hide_keyboard
-    query("#{selector[PLATFORM]}", :setText=>"#{value}")
+    enter_text("#{selector[PLATFORM]}",value)
   end
 
   # Scroll
@@ -279,7 +284,7 @@ module AndroidHelper
   end
 
   def select_cell(selector, position, time=50)
-    wait("#{selector[PLATFORM]} index:#{position}", :timeout=>time.to_i)
+    wait("#{selector[PLATFORM]} index:#{position}", time.to_i)
     touch("#{selector[PLATFORM]} index:#{position}")
   end
 

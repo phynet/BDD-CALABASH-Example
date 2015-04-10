@@ -2,7 +2,7 @@ require 'calabash-cucumber/operations'
 include ::Calabash::Cucumber::Operations
 
 module IosHelper
-  
+
   PLATFORM = :ios
 
   def who_i_am

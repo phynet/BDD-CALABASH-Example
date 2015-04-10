@@ -15,5 +15,5 @@ end
 Then /^I see Heroes List screen with "(.*?)"$/ do |title|
 	@dashboard_screen = DashboardScreen.new
 	@dashboard_screen. wait_for_screen
-	@dashboard_screen.check_screen(title)
+	assert(@dashboard_screen.check_screen(title),"I'm not in Heroes List screen")
 end

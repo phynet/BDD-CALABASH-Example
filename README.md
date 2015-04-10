@@ -13,11 +13,4 @@ You will need to add a folder called **binary** in root. Inside you will have to
   
   [https://github.com/phynet/Heroes-Android-Calabash-Example](https://github.com/phynet/Heroes-Android-Calabash-Example)
 
-.
-├ ─ binary
-    ├ ─ ─ android
-    ├ ─ ─ ios
-├── config
-├── features
-├── Gemfile
-├── output
+(http://es.tinypic.com/r/90bocm/8)

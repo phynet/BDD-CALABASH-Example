@@ -14,5 +14,5 @@ Scenario Outline: Example steps Happy Path
 
 Examples:
 	| user | password  | title            |
-	| bdd  | 12344      | Superheroes List |
+	| bdd  | 1234      | Superheroes List |
 

@@ -3,7 +3,7 @@ BDD EXAMPLE USING CALABASH-IOS &amp; CALABASH-ANDROID
 
 Testing with calabash-androd and calabash-ios using Gherkin - cucumber
 
-You will need to add a folder called **binary** in root. Inside you will have to add two more folders: android and ios. Inside you will add 
+You will need to add a folder called **binary** in root. Inside you will have to add two more folders: **android** and **ios**. Inside you will add both binary projects. Links of these are below.
 
 ##binary ios
   
@@ -14,9 +14,9 @@ You will need to add a folder called **binary** in root. Inside you will have to
   [https://github.com/phynet/Heroes-Android-Calabash-Example](https://github.com/phynet/Heroes-Android-Calabash-Example)
 
 .
-├── binary
-    ├── android
-    ├── ios
+├ ─ binary
+    ├ ─ ─ android
+    ├ ─ ─ ios
 ├── config
 ├── features
 ├── Gemfile
